@@ -39,7 +39,8 @@ def main():
     print("The following files are moved to trash/recycling bin:")
 
     # delete files not in the edited_raw collection
-    for file in os.listdir(dir_location):
+    files_list = os.listdir(dir_location)
+    for file in files_list:
         if file.endswith(ext_raw):
             if file not in edited_raws:
                 send2trash(file)
